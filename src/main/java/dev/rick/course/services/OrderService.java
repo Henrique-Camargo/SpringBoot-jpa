@@ -1,7 +1,8 @@
 package dev.rick.course.services;
 
+import dev.rick.course.entities.Order;
 import dev.rick.course.entities.User;
-import dev.rick.course.repository.UserRepository;
+import dev.rick.course.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,17 +10,17 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserService {
+public class OrderService {
 
     @Autowired
-    private UserRepository repository;
+    private OrderRepository repository;
 
-    public List<User> findAll(){
+    public List<Order> findAll(){
         return repository.findAll();
     }
 
-    public User findById(Long id){
-        Optional<User> obj = repository.findById(id);
+    public Order findById(Long id){
+        Optional<Order> obj = repository.findById(id);
         return obj.get();
     }
 
